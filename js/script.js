@@ -1,48 +1,33 @@
-let wrapper = document.createElement("div");
-wrapper.className = "wrapper";
+function createElement(tag, idName, text) {
+  let element = document.createElement(tag);
+  element.id = idName;
+  element.innerHTML = text;
+  return element;
+}
+
+let container = createElement("div", "container", "");
+let wrapper = createElement("div", "wrapper", "");
+let title = createElement("h1", "title", "JavaScript Counter");
+let counterDisplay = createElement("div", "counter", "0");
+let minusButton = createElement("button", "minus", "-");
+let plusButton = createElement("button", "plus", "+");
+let resetButton = createElement("button", "reset", "Reset");
 
 document.body.append(wrapper);
-
-let title = document.createElement("h1");
-title.className = "title";
-title.innerHTML = "JavaScript Counter";
-
-let container = document.createElement("div");
-container.className = "container";
-
-let reset = document.createElement("button");
-reset.className = "reset";
-reset.innerHTML = "reset";
-
-wrapper.append(title, container, reset);
-
-let plus = document.createElement("button");
-plus.className = "plus";
-plus.innerHTML = "+";
-
-let counterDisplay = document.createElement("div");
-counterDisplay.className = "counter";
-counterDisplay.innerHTML = 0;
-
-let minus = document.createElement("button");
-minus.className = "minus";
-minus.innerHTML = "-";
-
-container.append(minus, counterDisplay, plus);
+wrapper.append(title, container, resetButton);
+container.append(minusButton, counterDisplay, plusButton);
 
 let counter = 0;
 
-plus.addEventListener("click", function () {
-  counter++;
-  counterDisplay.innerHTML = counter;
-});
-
-minus.addEventListener("click", function () {
-  counter--;
-  counterDisplay.innerHTML = counter;
-});
-
-reset.addEventListener("click", function () {
-  counter = 0;
+document.getElementById("wrapper").addEventListener("click", function (e) {
+  if (e.target == minusButton) {
+    counter--;
+  }
+  if (e.target == plusButton) {
+    counter++;
+  }
+  if (e.target == resetButton) {
+    counter = 0;
+  }
   counterDisplay.innerHTML = counter;
 });

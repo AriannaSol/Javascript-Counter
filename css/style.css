@@ -9,18 +9,18 @@ body{
     background-attachment: fixed;
 }
 
-.wrapper{
+#wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.title{
+#title{
     text-shadow: 2px 2px #4f7a78;
 }
 
-.plus, 
-.minus{
+#plus, 
+#minus{
     width: 40px;
     height:40px;
     border-radius: 5px;
@@ -31,11 +31,11 @@ body{
     cursor: pointer;
 }
 
-.counter{
+#counter{
     font-size: 80px;
 }
 
-.container{
+#container{
     display: flex;
     justify-content: space-evenly;
     width: 40%;
@@ -45,7 +45,7 @@ body{
     border-radius: 15px;
 }
 
-.reset{
+#reset{
     width: 150px;
     height:50px;
     border-radius: 15px;
@@ -57,7 +57,7 @@ body{
 }
 
 @media screen and (max-width: 500px){
-    .title{
+    #title{
         font-size: 30px;
     }
 }
